@@ -8,6 +8,7 @@
 
 <header class="main-header post-head {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if feature_image}}overlay{{/if}} clearfix">
+        <a class="home-button" href="{{@blog.url}}" title="Home"><i class="fa fa-home"></i> Home</a>
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
         {{#if @blog.navigation}}
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
@@ -81,6 +82,23 @@
                 <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
             </section>
             {{/if}}
+
+          <a id="nodebb-comments"></a>
+          <script type="text/javascript">
+          var nbb = {};
+          nbb.url = '{{@blog.url}}/forums';
+          nbb.cid = 1;
+
+          (function() {
+          nbb.articleID = '{{../post.id}}'; nbb.title = '{{../post.title}}';
+          nbb.tags = [{{#../post.tags}}"{{name}}",{{/../post.tags}}];
+          nbb.script = document.createElement('script'); nbb.script.type = 'text/javascript'; nbb.script.async = true;
+          nbb.script.src = nbb.url + '/plugins/nodebb-plugin-blog-comments/lib/ghost.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(nbb.script);
+          })();
+          </script>
+          <script id="nbb-markdown" type="text/markdown">{{../post.markdown}}</script>
+          <noscript>Please enable JavaScript to view comments</noscript>
 
         </footer>
 
