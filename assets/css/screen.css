@@ -129,6 +129,10 @@ td, th{ padding: 0; }
     -moz-osx-font-smoothing: grayscale;
 }
 
+.fa-icons {
+    text-decoration: none;
+}
+
 /* Each icon is created by inserting the correct character into the
    content of the :before pseudo element. Like a boss. */
 .icon-ghost:before {
