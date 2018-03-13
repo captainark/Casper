@@ -12,7 +12,7 @@ List of changes from the default 1.4 version of Casper :
 - smaller landing page picture and removal of the down arrow ;
 - home button in the top left of every page (aside from the home page -- home icon requires fontsawesome in code injection) ;
 - footer from code injection before site copyright ;
-- nodebb comments (requires a nodebb installation using nodebb-plugin-blog-comments).
+- isso comments (requires an isso installation on /comments of your blog url).
 
 Use at your own risk, this is a hack job.
 
